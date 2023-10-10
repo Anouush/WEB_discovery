@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <input type="text" id="number1">
+
+    <select id="operator">
+        <option value="plus">Sumar</option>
+        <option value="minus">Restar</option>
+        <option value="multip">Multiplicar</option>
+        <option value="divide">Dividir</option>
+        <option value="modulo">Modulo</option>
+    </select>
+
+        <input type="text" id="number2">
+
+    <input type="submit" value="Try me!" onclick="calcular()">
+
+    <script>
+        function calcular()
+{
+    let operation = document.getElementById("operator").selectedIndex;
+    let result;
+	let firstnumber = parseInt(document.getElementById("number1").value);
+    let secondnumber = parseInt(document.getElementById("number2").value);
+switch (operation)
+{
+  case 0:
+    result=firstnumber + secondnumber;
+    break;
+  case 1:
+    result=firstnumber - secondnumber;
+    break;
+  case 2:
+    result=firstnumber * secondnumber;
+    break;
+  case 3:
+    result=firstnumber / secondnumber;
+    break;
+  case 4:
+    result=firstnumber % secondnumber;
+}
+if (firstnumber >= 0 && secondnumber >= 0)
+{
+	if ((operation == 3 && secondnumber == 0) || (operation == 4 && secondnumber == 0)){
+		alert("It's over 900");
+	}else{
+		alert (result);
+		console.log(result);
+	}
+}else{
+		alert("Error :(");
+	}
+}
+setTimeout(saludo, 30000);
+function saludo(){
+	alert("Please, use me ...");
+}
+ 
+</script>
+    </body>
+</html>

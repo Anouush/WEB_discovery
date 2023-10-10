@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<style>
+body{
+	height: 100vh;
+	display:flex;
+	justify-content:center;
+	flex-direction:column-reverse;
+}
+.balloon{
+	width:200px;
+	height:200px;
+	border-radius:50%;
+	margin: 0 auto 10px;
+}
+
+.red{
+	background-color:red;
+}
+
+.green{
+	background-color:green;
+}
+
+.blue{
+	background-color:blue;
+}
+</style>
+		</head>
+		<body>
+			<div class="balloon red" id="balloon" onclick="myclick()" onmouseleave="myhover()"></div>
+	<script>
+
+function color_first()
+{
+	 var balloon = document.getElementById("balloon").classList;
+            //rojo-verde-azul-rojo
+            if( balloon.contains("red")){
+                balloon.remove("red");
+                balloon.add("green");
+            }else if( balloon.contains("green")){
+                balloon.remove("green");
+                balloon.add("blue");
+            }else if(balloon.contains("blue")){
+                balloon.remove("blue");
+                balloon.add("red");
+			}
+}
+
+function color_second()
+{
+	var balloon = document.getElementById("balloon").classList;
+	 //rojo-azul-verde-rojo
+            if( balloon.contains("red")){
+                balloon.remove("red");
+                balloon.add("blue");
+            }else if( balloon.contains("blue")){
+                balloon.remove("blue");
+                balloon.add("green");
+            }else if(balloon.contains("green")){
+                balloon.remove("green");
+                balloon.add("red");
+            }
+}
+
+
+// funcion para cambiar el tamaño de globo sumando 10 px cad vez que hacemos click, hasta que llege a 420px(<=420px, onclick)
+function myclick()
+{
+	var balloon = document.getElementById("balloon");
+	color_first();
+	if (balloon.style.width <= "420"){
+		balloon.style.width = (balloon.offsetWidth + 10) + "px";
+		balloon.style.height = (balloon.offsetHeight + 10) + "px";
+	}else{
+		balloon.style.width =  "200px";
+		balloon.style.height = "200px";
+	}
+}
+
+// funcion para reducir el tamaño de globo cuando se quita el raton a 5px hasta lleagar a 200px (>= 200px, mouseover)
+function myhover()
+{
+	var balloon = document.getElementById("balloon");
+	color_second()
+	balloon.style.width = Math.max(200, balloon.offsetWidth - 5) + "px";
+	balloon.style.height = Math.max(200, balloon.offsetWidth - 5) + "px";
+}
+	</script>
+		</body>
+</html>

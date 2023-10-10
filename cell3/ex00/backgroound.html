@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css"  href="backgroound.css">
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<button class="size" type="button" onclick="myFunction()">Click me!</button>
+
+
+	<script type="text/javascript">
+
+		let colors = ['Gold', 'Coral', 'DodgerBlue', 'MediumSeaGreen',' IndianRed', 'Gray', 'SlateBlue', 'Violet', 'LightGray'];
+
+let selectedColorIndex = 1;
+
+let handleChangeColor = () => {
+document.body.style.backgroundColor = colors[selectedColorIndex];
+	selectedColorIndex++;
+	if(selectedColorIndex >= colors.length) selectedColorIndex = 0;
+}
+function myFunction(){
+	document.body.style.backgroundColor=handleChangeColor()
+}
+	</script> 
+	</body>
+</html>

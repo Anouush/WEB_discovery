@@ -1,0 +1,58 @@
+body, html {
+  height: 100%;
+}
+
+.parallax1 {
+  /* The image used */
+  background-image: url('1.jpg');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax2 {
+  /* The image used */
+  background-image: url('2.jpg');
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.text{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	font-size:30px;
+	color: white;
+	text-align: center;
+	margin: 0;;
+}
+.black {
+	height:50%;
+	background-color: black;
+	font-size: 50px;
+	color: white;
+	text-align: center;
+	display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
